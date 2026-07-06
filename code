@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lions Club Personal Training â€” Coach Mehru, ISSA CPT, CES | Tampa, FL</title>
+<meta name="description" content="One-on-one personal training in Tampa, FL with Coach Mehru, ISSA Certified Personal Trainer &amp; Corrective Exercise Specialist. 5.0 rated. Book your first session today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --ink:#1E1912;
+    --charcoal:#151109;
+    --charcoal-2:#1D1811;
+    --bone:#F3EBDA;
+    --parchment:#E9DEC2;
+    --parchment-2:#DED0AC;
+    --gold:#C4901F;
+    --gold-bright:#E3B24B;
+    --ember:#7C3524;
+    --ember-bright:#A3452F;
+    --line-dark: rgba(243,235,218,0.14);
+    --line-light: rgba(30,25,18,0.14);
+    --shadow: 0 20px 50px rgba(21,17,9,0.35);
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
+  }
+
+  body{
+    background:var(--bone);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.55;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3, .display{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    line-height:0.95;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px; letter-spacing:0.1em; text-transform:uppercase;
+    padding:16px 28px;
+    border-radius:2px;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    white-space:nowrap;
+  }
+  .btn-solid{ background:var(--gold); color:var(--charcoal); }
+  .btn-solid:hover{ background:var(--gold-bright); transform:translateY(-2px); }
+  .btn-ghost{ border-color:var(--line-dark); color:var(--bone); }
+  .btn-ghost:hover{ border-color:var(--gold-bright); color:var(--gold-bright); transform:translateY(-2px); }
+  .btn-ghost-dark{ border-color:var(--line-light); color:var(--ink); }
+  .btn-ghost-dark:hover{ border-color:var(--ember); color:var(--ember); transform:translateY(-2px); }
+  .btn:focus-visible{ outline:3px solid var(--gold-bright); outline-offset:3px; }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(21,17,9,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line-dark);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 32px; max-width:1180px; margin:0 auto;
+  }
+  .brand{ display:flex; align-items:center; gap:12px; color:var(--bone); }
+  .brand svg{ width:38px; height:38px; flex-shrink:0; }
+  .brand-text{ font-family:'Anton', sans-serif; font-size:19px; letter-spacing:0.04em; }
+  .brand-text span{ color:var(--gold-bright); }
+  .nav-links{ display:flex; gap:34px; align-items:center; }
+  .nav-links a{
+    color:var(--bone); font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px; letter-spacing:0.1em; text-transform:uppercase;
+    opacity:0.82; transition:opacity 0.2s, color 0.2s; position:relative;
+  }
+  .nav-links a:hover{ opacity:1; color:var(--gold-bright); }
+  .nav-cta{ display:flex; align-items:center; }
+  .burger{ display:none; background:none; border:none; color:var(--bone); font-size:26px; cursor:pointer; }
+
+  @media (max-width:900px){
+    .nav-links{
+      position:fixed; top:71px; left:0; right:0;
+      background:var(--charcoal); flex-direction:column; align-items:flex-start;
+      padding:26px 32px; gap:22px; border-bottom:1px solid var(--line-dark);
+      transform:translateY(-130%); transition:transform 0.3s ease;
+    }
+    .nav-links.open{ transform:translateY(0); }
+    .burger{ display:block; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:var(--charcoal);
+    color:var(--bone);
+    padding:168px 0 110px;
+    overflow:hidden;
+  }
+  .mane-burst{
+    position:absolute; top:50%; right:-6%; transform:translateY(-50%);
+    width:min(760px, 78vw); height:min(760px, 78vw);
+    opacity:0.9;
+    pointer-events:none;
+  }
+  .mane-burst .ray{ transform-origin:200px 200px; }
+  .hero-grid{
+    position:relative; z-index:2;
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; align-items:end;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    color:var(--gold-bright); font-size:12.5px; margin-bottom:26px;
+  }
+  .eyebrow::before{ content:''; width:26px; height:1.5px; background:var(--gold-bright); }
+  .hero h1{
+    font-size:clamp(52px, 8vw, 108px);
+    color:var(--bone);
+  }
+  .hero h1 em{ font-style:normal; color:var(--gold-bright); }
+  .hero-sub{
+    max-width:480px; margin-top:26px; font-size:18px; color:rgba(243,235,218,0.78);
+  }
+  .hero-actions{ display:flex; gap:16px; margin-top:44px; flex-wrap:wrap; }
+
+  .hero-card{
+    background:var(--charcoal-2);
+    border:1px solid var(--line-dark);
+    padding:30px;
+    position:relative; z-index:2;
+  }
+  .rating-row{ display:flex; align-items:center; gap:14px; margin-bottom:18px; }
+  .stars{ display:flex; gap:3px; }
+  .stars svg{ width:18px; height:18px; fill:var(--gold-bright); }
+  .rating-num{ font-family:'Anton', sans-serif; font-size:26px; color:var(--bone); }
+  .rating-count{ font-size:13px; color:rgba(243,235,218,0.6); }
+  .cred-list{ list-style:none; display:flex; flex-direction:column; gap:12px; margin-top:6px;}
+  .cred-list li{ display:flex; gap:12px; align-items:flex-start; font-size:14.5px; color:rgba(243,235,218,0.85); }
+  .cred-list svg{ width:16px; height:16px; flex-shrink:0; margin-top:3px; stroke:var(--gold-bright); }
+
+  @media (max-width:900px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero{ padding-top:130px; }
+  }
+
+  /* ---------- MARQUEE STRIP ---------- */
+  .strip{
+    background:var(--gold); color:var(--charcoal);
+    overflow:hidden; border-top:1px solid var(--charcoal); border-bottom:1px solid var(--charcoal);
+  }
+  .strip-track{
+    display:flex; white-space:nowrap;
+    animation:scroll-strip 32s linear infinite;
+    width:max-content;
+  }
+  @keyframes scroll-strip{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+  .strip-item{
+    font-family:'IBM Plex Mono', monospace; font-size:13.5px; letter-spacing:0.12em;
+    text-transform:uppercase; padding:14px 34px; display:flex; align-items:center; gap:12px;
+  }
+  .strip-item::after{ content:'â—†'; font-size:9px; margin-left:34px; opacity:0.6; }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{ padding:110px 0; }
+  .section-head{ max-width:640px; margin-bottom:60px; }
+  .section-tag{ color:var(--ember); font-size:12.5px; margin-bottom:18px; display:block; }
+  .section-head h2{ font-size:clamp(34px, 5vw, 56px); }
+
+  /* ---------- ABOUT ---------- */
+  .about{ background:var(--bone); }
+  .about-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:70px; align-items:center; }
+  .coach-frame{
+    position:relative; aspect-ratio:4/5; background:var(--charcoal);
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+    border:1px solid var(--ink);
+  }
+  .coach-frame svg{ width:78%; height:78%; }
+  .coach-badge{
+    position:absolute; bottom:20px; left:20px; right:20px;
+    background:rgba(21,17,9,0.88); border:1px solid var(--line-dark);
+    padding:16px 18px; color:var(--bone);
+  }
+  .coach-badge .name{ font-family:'Anton', sans-serif; font-size:20px; letter-spacing:0.02em; }
+  .coach-badge .cred{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--gold-bright); letter-spacing:0.1em; margin-top:4px; }
+  .about-copy p{ font-size:17px; margin-bottom:20px; max-width:560px; color:#3a332a; }
+  .about-copy p:first-of-type{ font-size:20px; color:var(--ink); font-weight:500; }
+  .divider-mane{ width:100%; height:22px; margin:34px 0; opacity:0.5; }
+
+  /* ---------- PROGRAMS ---------- */
+  .programs{ background:var(--charcoal); color:var(--bone); }
+  .programs .section-tag{ color:var(--gold-bright); }
+  .program-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line-dark); border:1px solid var(--line-dark); }
+  .program-card{ background:var(--charcoal); padding:38px 32px; transition:background 0.3s ease; }
+  .program-card:hover{ background:var(--charcoal-2); }
+  .program-num{ font-family:'IBM Plex Mono', monospace; color:var(--ember-bright); font-size:13px; margin-bottom:22px; display:block; }
+  .program-card h3{ font-size:24px; margin-bottom:14px; }
+  .program-card p{ font-size:15px; color:rgba(243,235,218,0.72); }
+  @media (max-width:820px){ .program-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- APPROACH ---------- */
+  .approach{ background:var(--parchment); }
+  .approach-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:36px; }
+  .approach-item{ border-top:2px solid var(--ink); padding-top:20px; }
+  .approach-item .mono{ font-size:11.5px; color:var(--ember); display:block; margin-bottom:14px; }
+  .approach-item h3{ font-size:19px; margin-bottom:10px; text-transform:none; font-family:'Work Sans', sans-serif; font-weight:700; }
+  .approach-item p{ font-size:14.5px; color:#4a4234; }
+  @media (max-width:900px){ .approach-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:560px){ .approach-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- REVIEWS ---------- */
+  .reviews{ background:var(--bone); }
+  .reviews-top{ display:flex; justify-content:space-between; align-items:flex-end; gap:30px; flex-wrap:wrap; margin-bottom:56px; }
+  .score-block{ display:flex; align-items:center; gap:22px; }
+  .score-num{ font-family:'Anton', sans-serif; font-size:64px; line-height:1; color:var(--ink); }
+  .score-meta .stars svg{ fill:var(--gold); }
+  .score-meta p{ font-size:13.5px; color:#6b6252; margin-top:6px; }
+  .review-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line-light); border:1px solid var(--line-light); }
+  .review-card{ background:var(--bone); padding:34px; }
+  .review-card .stars{ margin-bottom:16px; }
+  .review-card .stars svg{ fill:var(--gold); width:15px; height:15px; }
+  .review-card p{ font-size:16px; color:#332c22; margin-bottom:18px; }
+  .review-meta{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:#8a8070; text-transform:uppercase; letter-spacing:0.08em; }
+  @media (max-width:760px){ .review-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- LOCATION / CONTACT ---------- */
+  .location{ background:var(--charcoal); color:var(--bone); }
+  .location-grid{ display:grid; grid-template-columns:1fr 1fr; gap:60px; }
+  .info-row{ display:flex; gap:18px; padding:22px 0; border-bottom:1px solid var(--line-dark); }
+  .info-row:first-child{ padding-top:0; }
+  .info-row svg{ width:20px; height:20px; stroke:var(--gold-bright); flex-shrink:0; margin-top:2px; }
+  .info-row .label{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--gold-bright); letter-spacing:0.1em; margin-bottom:6px; display:block; }
+  .info-row .value{ font-size:16.5px; }
+  .info-row .value a{ text-decoration:underline; text-underline-offset:3px; text-decoration-color:var(--line-dark); }
+  .info-row .value a:hover{ text-decoration-color:var(--gold-bright); color:var(--gold-bright); }
+  .hours-table{ width:100%; border-collapse:collapse; margin-top:6px; }
+  .hours-table td{ padding:5px 0; font-size:15px; }
+  .hours-table td:last-child{ text-align:right; font-family:'IBM Plex Mono', monospace; font-size:13px; color:rgba(243,235,218,0.75); }
+  .hours-table tr.today td{ color:var(--gold-bright); font-weight:600; }
+  .map-frame{
+    border:1px solid var(--line-dark); background:var(--charcoal-2);
+    display:flex; align-items:center; justify-content:center; min-height:340px;
+    position:relative; overflow:hidden;
+  }
+  .map-frame svg{ width:100%; height:100%; position:absolute; inset:0; opacity:0.5; }
+  .map-pin{ position:relative; z-index:2; text-align:center; }
+  .map-pin svg.pin-icon{ width:34px; height:34px; fill:var(--ember-bright); margin:0 auto 14px; opacity:1; }
+  .map-pin a{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:0.08em; color:var(--gold-bright); text-decoration:underline; text-underline-offset:4px; }
+  @media (max-width:900px){ .location-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- CTA BAND ---------- */
+  .cta-band{
+    background:var(--ember); color:var(--bone); text-align:center; padding:90px 0;
+  }
+  .cta-band h2{ font-size:clamp(32px,6vw,58px); margin-bottom:26px; }
+  .cta-band .btn-solid{ background:var(--charcoal); color:var(--bone); }
+  .cta-band .btn-solid:hover{ background:var(--charcoal-2); }
+  .cta-band .btn-ghost{ border-color:rgba(243,235,218,0.4); }
+
+  /* ---------- FOOTER ---------- */
+  footer{ background:var(--charcoal); color:rgba(243,235,218,0.6); padding:50px 0 30px; border-top:1px solid var(--line-dark); }
+  .footer-grid{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; padding-bottom:30px; border-bottom:1px solid var(--line-dark); margin-bottom:24px; }
+  .footer-brand{ display:flex; align-items:center; gap:12px; color:var(--bone); }
+  .footer-brand svg{ width:28px; height:28px; }
+  .footer-links{ display:flex; gap:26px; flex-wrap:wrap; }
+  .footer-links a{ font-size:13px; }
+  .footer-links a:hover{ color:var(--gold-bright); }
+  .footer-bottom{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:12.5px; }
+
+  /* reveal on scroll */
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="brand">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#E3B24B" stroke-width="2"/>
+        <g stroke="#E3B24B" stroke-width="2.5" stroke-linecap="round">
+          <line x1="50" y1="4" x2="50" y2="16"/>
+          <line x1="50" y1="84" x2="50" y2="96"/>
+          <line x1="4" y1="50" x2="16" y2="50"/>
+          <line x1="84" y1="50" x2="96" y2="50"/>
+          <line x1="16" y1="16" x2="24" y2="24"/>
+          <line x1="76" y1="76" x2="84" y2="84"/>
+          <line x1="84" y1="16" x2="76" y2="24"/>
+          <line x1="24" y1="76" x2="16" y2="84"/>
+        </g>
+        <text x="50" y="61" text-anchor="middle" font-family="Anton" font-size="38" fill="#F3EBDA">M</text>
+      </svg>
+      <span class="brand-text">LIONS CLUB <span>P.T.</span></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">Coach</a>
+      <a href="#programs">Programs</a>
+      <a href="#approach">Approach</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#location">Visit</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#book" class="btn btn-solid" style="padding:12px 20px;">Book online</a>
+    </div>
+    <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false">â˜°</button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding-top:150px;">
+    <svg class="mane-burst" viewBox="0 0 400 400" aria-hidden="true">
+      <g fill="none" stroke="#C4901F">
+        <!-- radiating tapered rays generated programmatically-like -->
+        <g id="rays"></g>
+      </g>
+      <circle cx="200" cy="200" r="86" fill="none" stroke="#E3B24B" stroke-width="1.5" opacity="0.55"/>
+      <circle cx="200" cy="200" r="60" fill="#1D1811" stroke="#E3B24B" stroke-width="1.5"/>
+    </svg>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow mono">Tampa, Florida Â· Personal Training</span>
+        <h1>Train with <em>the pride's</em> discipline.</h1>
+        <p class="hero-sub">Lions Club Personal Training is a one-on-one strength &amp; movement practice led by Coach Mehru â€” ISSA Certified Personal Trainer and Corrective Exercise Specialist. Every program is built around how your body actually moves.</p>
+        <div class="hero-actions">
+          <a href="#book" class="btn btn-solid">Book a session</a>
+          <a href="tel:+19545914657" class="btn btn-ghost">Call (954) 591-4657</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="rating-row">
+          <span class="rating-num">5.0</span>
+          <div>
+            <div class="stars" aria-hidden="true">
+              <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+            </div>
+            <div class="rating-count">4 client reviews</div>
+          </div>
+        </div>
+        <ul class="cred-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> ISSA Certified Personal Trainer</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Corrective Exercise Specialist (CES)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Open today Â· Closes 6 PM</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="strip" aria-hidden="true">
+    <div class="strip-track">
+      <span class="strip-item">ISSA CPT</span>
+      <span class="strip-item">Corrective Exercise Specialist</span>
+      <span class="strip-item">5.0 Rated</span>
+      <span class="strip-item">1-on-1 Coaching</span>
+      <span class="strip-item">Tampa, FL</span>
+      <span class="strip-item">ISSA CPT</span>
+      <span class="strip-item">Corrective Exercise Specialist</span>
+      <span class="strip-item">5.0 Rated</span>
+      <span class="strip-item">1-on-1 Coaching</span>
+      <span class="strip-item">Tampa, FL</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <div class="coach-frame">
+          <svg viewBox="0 0 200 240" aria-hidden="true">
+            <circle cx="100" cy="80" r="46" fill="#2A2318"/>
+            <path d="M40 230 C40 160 70 130 100 130 C130 130 160 160 160 230 Z" fill="#2A2318"/>
+            <g stroke="#E3B24B" stroke-width="1.5" fill="none" opacity="0.7">
+              <circle cx="100" cy="80" r="58"/>
+            </g>
+          </svg>
+          <div class="coach-badge">
+            <div class="name">Coach Mehru</div>
+            <div class="cred">ISSA CPT Â· CES Â· Founder</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-copy reveal">
+        <span class="section-tag mono">About the coach</span>
+        <p>Mehru built Lions Club Personal Training on one idea: strength that lasts is strength that's built correctly.</p>
+        <p>As an ISSA Certified Personal Trainer with a specialization in Corrective Exercise, she looks past the workout of the day to how your joints, posture, and movement patterns actually work â€” then builds a program around it, not the other way around.</p>
+        <p>Sessions run out of a private, by-appointment studio in Tampa, so every hour is fully yours: no crowded floor, no shared equipment, no distractions from the work.</p>
+        <svg class="divider-mane" viewBox="0 0 600 20" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="0" y1="10" x2="600" y2="10" stroke="#C4901F" stroke-width="1" stroke-dasharray="1 10" stroke-linecap="round"/>
+        </svg>
+        <a href="#programs" class="btn btn-ghost-dark">See the programs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="programs" id="programs">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-tag mono">Programs</span>
+        <h2>Coaching built<br>around your body.</h2>
+      </div>
+      <div class="program-grid reveal">
+        <div class="program-card">
+          <span class="program-num mono">Private</span>
+          <h3>1-on-1 Training</h3>
+          <p>Fully personalized strength and conditioning sessions, programmed and coached in real time by Mehru â€” no cookie-cutter templates.</p>
+        </div>
+        <div class="program-card">
+          <span class="program-num mono">Rehab-Minded</span>
+          <h3>Corrective Exercise</h3>
+          <p>For pain, past injury, or movement that just feels "off." Mehru's CES background targets the root pattern, not just the symptom.</p>
+        </div>
+        <div class="program-card">
+          <span class="program-num mono">Remote</span>
+          <h3>Online Coaching</h3>
+          <p>Custom programming, form checks, and check-ins for clients who want the same eye for detail without stepping into the studio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="approach" id="approach">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-tag mono">The approach</span>
+        <h2>Four things every plan is built on.</h2>
+      </div>
+      <div class="approach-grid reveal">
+        <div class="approach-item">
+          <span class="mono">Assess</span>
+          <h3>Movement first</h3>
+          <p>Every client starts with a real assessment of posture, mobility, and mechanics â€” not a generic intake form.</p>
+        </div>
+        <div class="approach-item">
+          <span class="mono">Correct</span>
+          <h3>Fix the pattern</h3>
+          <p>Imbalances and compensations get addressed directly, so strength gets built on a stable foundation.</p>
+        </div>
+        <div class="approach-item">
+          <span class="mono">Build</span>
+          <h3>Progressive strength</h3>
+          <p>Programming advances week to week, tracked closely so effort always translates into results.</p>
+        </div>
+        <div class="approach-item">
+          <span class="mono">Sustain</span>
+          <h3>Habits that hold</h3>
+          <p>The goal isn't a single hard session â€” it's a way of training you can keep long after the program ends.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <div class="reviews-top reveal">
+        <div class="score-block">
+          <span class="score-num">5.0</span>
+          <div class="score-meta">
+            <div class="stars" aria-hidden="true">
+              <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+              <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+            </div>
+            <p>Based on 4 verified reviews</p>
+          </div>
+        </div>
+        <a href="https://maps.app.goo.gl/mb9JU6wHoyD82KER6" target="_blank" rel="noopener" class="btn btn-ghost-dark">Read reviews on Google</a>
+      </div>
+      <div class="review-grid reveal">
+        <div class="review-card">
+          <div class="stars" aria-hidden="true">
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+          </div>
+          <p>"I've been training with Mehru for a while now, and I couldn't be more impressed. She's incredibly thorough, passionate, and detail-oriented in every session."</p>
+          <div class="review-meta">Google review Â· 1 year ago</div>
+        </div>
+        <div class="review-card">
+          <div class="stars" aria-hidden="true">
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.3L10 15l-5.6 3.1 1.4-6.3L1 8.5l6.4-.6z"/></svg>
+          </div>
+          <p>See the full set of client stories â€” including notes on form corrections, consistency, and long-term progress â€” on the Lions Club Google Business profile.</p>
+          <div class="review-meta">4 reviews total Â· Google</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location" id="location">
+    <div class="wrap location-grid">
+      <div class="reveal">
+        <span class="section-tag mono" style="color:var(--gold-bright);">Visit the studio</span>
+        <h2 style="font-size:clamp(30px,4.5vw,44px); margin-bottom:34px;">Tampa, Florida</h2>
+
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <span class="label">Address</span>
+            <div class="value"><a href="https://maps.app.goo.gl/mb9JU6wHoyD82KER6" target="_blank" rel="noopener">1106 Rose Blossom Ct, Tampa, FL 33613</a></div>
+          </div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.8 2.2z"/></svg>
+          <div>
+            <span class="label">Phone</span>
+            <div class="value"><a href="tel:+19545914657">(954) 591-4657</a></div>
+          </div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          <div>
+            <span class="label">Instagram</span>
+            <div class="value"><a href="https://instagram.com" target="_blank" rel="noopener">@lionsclubpt</a></div>
+          </div>
+        </div>
+        <div class="info-row" style="border-bottom:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <div style="width:100%;">
+            <span class="label">Hours</span>
+            <table class="hours-table">
+              <tr class="today"><td>Sunday</td><td>9 AM â€“ 6 PM</td></tr>
+              <tr><td>Monday</td><td>7 AM â€“ 7 PM</td></tr>
+              <tr><td>Tuesday</td><td>7 AM â€“ 7 PM</td></tr>
+              <tr><td>Wednesday</td><td>7 AM â€“ 7 PM</td></tr>
+              <tr><td>Thursday</td><td>7 AM â€“ 7 PM</td></tr>
+              <tr><td>Friday</td><td>7 AM â€“ 6 PM</td></tr>
+              <tr><td>Saturday</td><td>9 AM â€“ 3 PM</td></tr>
+            </table>
+            <p style="font-size:12px; color:rgba(243,235,218,0.5); margin-top:10px;">By appointment â€” hours shown for reference, confirm your slot when booking.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="map-frame">
+          <svg viewBox="0 0 400 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M40 0H0V40" fill="none" stroke="#E3B24B" stroke-width="0.5"/>
+              </pattern>
+            </defs>
+            <rect width="400" height="340" fill="url(#grid)"/>
+          </svg>
+          <div class="map-pin">
+            <svg class="pin-icon" viewBox="0 0 24 24"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+            <div style="font-size:14px; margin-bottom:10px;">3GQH+CJ Tampa, Florida</div>
+            <a href="https://maps.app.goo.gl/mb9JU6wHoyD82KER6" target="_blank" rel="noopener">Open in Google Maps â†’</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band" id="book">
+    <div class="wrap">
+      <span class="mono" style="opacity:0.85;">Ready when you are</span>
+      <h2 style="margin-top:16px;">Your first session<br>starts the correction.</h2>
+      <div class="hero-actions" style="justify-content:center;">
+        <a href="https://maps.app.goo.gl/mb9JU6wHoyD82KER6" target="_blank" rel="noopener" class="btn btn-solid">Book online</a>
+        <a href="tel:+19545914657" class="btn btn-ghost">Call (954) 591-4657</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <a href="#top" class="footer-brand">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="46" fill="none" stroke="#E3B24B" stroke-width="2"/>
+          <text x="50" y="61" text-anchor="middle" font-family="Anton" font-size="38" fill="#F3EBDA">M</text>
+        </svg>
+        <span class="brand-text" style="font-size:16px;">LIONS CLUB P.T.</span>
+      </a>
+      <div class="footer-links">
+        <a href="#about">Coach</a>
+        <a href="#programs">Programs</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#location">Visit</a>
+        <a href="tel:+19545914657">(954) 591-4657</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Â© 2026 Lions Club Personal Training Â· Tampa, FL</span>
+      <span>Coach Mehru Â· ISSA CPT, CES</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Build mane burst rays
+  (function(){
+    const raysGroup = document.getElementById('rays');
+    const count = 28;
+    const cx = 200, cy = 200;
+    for(let i=0;i<count;i++){
+      const angle = (i / count) * Math.PI * 2;
+      const long = i % 2 === 0;
+      const rInner = 95;
+      const rOuter = long ? 195 : 150;
+      const x1 = cx + Math.cos(angle)*rInner;
+      const y1 = cy + Math.sin(angle)*rInner;
+      const x2 = cx + Math.cos(angle)*rOuter;
+      const y2 = cy + Math.sin(angle)*rOuter;
+      const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+      line.setAttribute('x1',x1); line.setAttribute('y1',y1);
+      line.setAttribute('x2',x2); line.setAttribute('y2',y2);
+      line.setAttribute('stroke-width', long ? 2 : 1.2);
+      line.setAttribute('stroke-linecap','round');
+      line.setAttribute('opacity', long ? 0.6 : 0.32);
+      raysGroup.appendChild(line);
+    }
+  })();
+
+  // Mobile nav toggle
+  const burger = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    burger.setAttribute('aria-expanded', false);
+  }));
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
